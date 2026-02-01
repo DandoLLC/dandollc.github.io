@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel D. Calloway III</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-tertiary: #18181b;
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #d4a574;
+            --border: #27272a;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 100px 0 60px;
+        }
+
+        .logo {
+            margin-bottom: 40px;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .name {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 2.75rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .identity {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        .identity.tribal {
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .lens {
+            font-family: 'Newsreader', Georgia, serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+
+        /* Work Items */
+        .work-item {
+            margin-bottom: 36px;
+        }
+
+        .work-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .work-title {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .work-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .work-title a:hover {
+            color: var(--accent);
+        }
+
+        .work-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .work-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 8px;
+            background: var(--bg-tertiary);
+            border-radius: 3px;
+            color: var(--accent);
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        /* Current roles - with descriptions */
+        .roles {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .role-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .role-line {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .role-line strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .role-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .career-spans {
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 20px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: color 0.2s;
+        }
+
+        .edu-detail {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .edu-school {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        /* Origin */
+        .origin p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .origin p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Connect */
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+
+        .links a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .links a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header {
+                padding: 70px 0 50px;
+            }
+
+            .name {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .bio {
+                font-size: 1rem;
+            }
+        }
+
+        /* Expandable coursework */
+        .edu-item.expandable {
+            cursor: pointer;
+        }
+
+        .edu-item.expandable:focus {
+            outline: 1px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .edu-item.expandable:hover .edu-name,
+        .edu-item.expandable:hover .edu-school {
+            color: var(--accent);
+        }
+
+        .expand-icon {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+
+        .edu-item.expanded .expand-icon {
+            transform: rotate(45deg);
+        }
+
+        .coursework {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            margin-top: 0;
+        }
+
+        .edu-item.expanded .coursework {
+            max-height: 500px;
+            margin-top: 12px;
+        }
+
+        .coursework p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            padding-left: 12px;
+            border-left: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="dando-logo.png" alt="DANDO" />
+            </div>
+            <h1 class="name">Daniel D. Calloway III</h1>
+            <p class="identity">AI Governance · Financial Services · Regulatory Strategy</p>
+            <p class="identity tribal">Member, Narragansett Indian Tribe</p>
+            <p class="lens">I come from a tradition that measures decisions by their impact seven generations out. That's the lens I bring to emerging technology.</p>
+            <p class="bio">
+                Fifteen years inside financial institutions, regulatory investigations, and high-stakes litigation. Published frameworks on legal AI and institutional governance. Author of books on what it takes for people and organizations to hold together under pressure. I study the systems that shape how we live.
+            </p>
+        </header>
+
+        <section>
+            <p class="section-label">Current</p>
+            <div class="roles">
+                <div class="role-item">
+                    <p class="role-line"><strong>Legal AI Integration & Evaluation</strong> · Various clients</p>
+                    <p class="role-desc">Advising legal teams on AI tool selection, workflow design, and responsible adoption. Developing evaluation frameworks that measure not just accuracy but reasoning quality, ethical grounding, and decision integrity.</p>
+                </div>
+                <div class="role-item">
+                    <p class="role-line"><strong>Senior Counsel & Advisory Board</strong> · Axiom Law</p>
+                    <p class="role-desc">Embedded legal and compliance advisory for global financial institutions, alternative asset managers, and AI-native technology companies. Current engagement: KYC/AML program design and regulatory strategy for a global private equity firm.</p>
+                </div>
+                <div class="role-item">
+                    <p class="role-line"><strong>Founder</strong> · DANDO LLC</p>
+                    <p class="role-desc">Intellectual property development and advisory services. Building frameworks for institutional coherence, AI governance, and human decision-making under pressure.</p>
+                </div>
+            </div>
+            <p class="career-spans">Career spans Capital One, Thomson Reuters, Binance, Boy Scouts of America bankruptcy, the $26B opioid MDL, DOJ support on Deepwater Horizon, private equity compliance, and crypto regulatory work. Seventy-plus engagements.</p>
+        </section>
+
+        <section>
+            <p class="section-label">Published Work</p>
+
+            <div class="work-item">
+                <h3 class="work-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5374930" target="_blank" rel="noopener noreferrer">The REASON Framework</a></h3>
+                <p class="work-meta">SSRN · 2025</p>
+                <p class="work-desc">A six-part rubric for evaluating legal AI. Not just accuracy—reasoning quality, ethical grounding, and decision integrity. For practitioners, compliance teams, and developers building AI that lawyers can actually trust.</p>
+            </div>
+
+            <div class="work-item">
+                <h3 class="work-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5960914" target="_blank" rel="noopener noreferrer">Coherence Under Acceleration</a></h3>
+                <p class="work-meta">SSRN · 2025</p>
+                <p class="work-desc">How speed degrades judgment. A framework for institutional governance when everything is moving faster than the people running it.</p>
+            </div>
+
+            <div class="work-item">
+                <h3 class="work-title">The Hegemonic Function of Law in American Slavery</h3>
+                <p class="work-meta">CALI Excellence Award · UConn Law · 2011 · <em>Forthcoming on SSRN</em></p>
+                <p class="work-desc">How legal systems encode ideology into infrastructure—and how resistance emerges anyway. The question I started with, and haven't stopped asking.</p>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Books</p>
+
+            <div class="work-item">
+                <h3 class="work-title"><a href="https://a.co/d/busT8dV" target="_blank" rel="noopener noreferrer">Callo's Way</a></h3>
+                <p class="work-meta">Book I of III</p>
+                <p class="work-desc">A framework for staying grounded under pressure. Nervous system regulation, attention discipline, and the practice of choosing deliberately.</p>
+            </div>
+
+            <div class="work-item">
+                <h3 class="work-title">The Dependency Design <span class="tag">Forthcoming</span></h3>
+                <p class="work-meta">Book II of III</p>
+                <p class="work-desc">How modern technology impacts human bonding circuitry. Dating apps, social platforms, algorithmic feeds, and more. A case for designed constraints and intentional repair.</p>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Background</p>
+
+            <div class="edu-item expandable" tabindex="0" onclick="this.classList.toggle('expanded')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('expanded')}">
+                <div class="edu-header">
+                    <div>
+                        <p class="edu-name">Columbia Business School</p>
+                        <p class="edu-detail">Certificate of Business Excellence (Alumni) · Global Banking Program</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="coursework">
+                    <p>FinTech Integration · Blockchain & Crypto Assets · Capital Markets · Central Banking · Securitization · AI & Machine Learning · Digital Transformation · Big Data & Data Ethics · ESG & Impact Investing · Financial Intermediation</p>
+                </div>
+            </div>
+
+            <div class="edu-item expandable" tabindex="0" onclick="this.classList.toggle('expanded')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('expanded')}">
+                <div class="edu-header">
+                    <div>
+                        <p class="edu-name">University of Connecticut School of Law</p>
+                        <p class="edu-detail">JD</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="coursework">
+                    <p>Law & Public Health · American Indian Law · American Slavery & American Law · Climate Law · Employment Discrimination · Labor Law · National Security Law · Evolution of Crime Victims' Rights · Criminal Law & Contemporary Issues · Building Urban Communities</p>
+                </div>
+            </div>
+
+            <div class="edu-item expandable" tabindex="0" onclick="this.classList.toggle('expanded')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('expanded')}">
+                <div class="edu-header">
+                    <div>
+                        <p class="edu-name">University of Maryland</p>
+                        <p class="edu-detail">BA, Criminology · Pre-med · Pre-business · Psychology</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="coursework">
+                    <p><strong>Pre-med:</strong> Chemistry I & II · Biology I & II · Personal & Community Health</p>
+                    <p style="margin-top: 8px;"><strong>Pre-business:</strong> Calculus · Accounting · Statistics · Microeconomics</p>
+                    <p style="margin-top: 8px;"><strong>Psychology & Human Development:</strong> Psychology · Educational Psychology · Child Growth & Development · Child in Families · Death Education · Sociology of Gender</p>
+                    <p style="margin-top: 8px;"><strong>Culture & Identity:</strong> Black Culture in US · African Art & Architecture · Women's Literature</p>
+                    <p style="margin-top: 8px;"><strong>Criminology:</strong> Victimology · Drugs & Crime · Juvenile Delinquency · White Collar & Organized Crime · Crime & Delinquency Prevention · Law Enforcement Administration · Criminal Justice Research Methods</p>
+                </div>
+            </div>
+
+            <div class="edu-item">
+                <p class="edu-name">Hopkins School</p>
+                <p class="edu-detail">New Haven, CT · Founded 1660</p>
+            </div>
+
+            <div class="edu-item" style="margin-top: 32px;">
+                <p class="edu-name">Executive Education</p>
+            </div>
+
+            <div class="edu-item expandable" tabindex="0" onclick="this.classList.toggle('expanded')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('expanded')}">
+                <div class="edu-header">
+                    <div>
+                        <p class="edu-school">Harvard Law School</p>
+                        <p class="edu-detail">Computer Science for Lawyers</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="coursework">
+                    <p>Computational Thinking · Algorithms & Data Structures · Cryptography · Internet Technologies · Web Development · Database Design · Cybersecurity · Intersection of Law, Tech & AI</p>
+                </div>
+            </div>
+
+            <div class="edu-item expandable" tabindex="0" onclick="this.classList.toggle('expanded')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('expanded')}">
+                <div class="edu-header">
+                    <div>
+                        <p class="edu-school">Berkeley Law</p>
+                        <p class="edu-detail">AI Institute</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="coursework">
+                    <p>State of AI · Generative & General-Purpose AI Systems · AI in the Public & Private Sectors · High-Risk AI Applications · AI Risks & Responsibility · International Regulatory Approaches · AI Governance · NIST AI RMF & EU Conformity Assessments · Liability & Accountability · Intellectual Property & AI · AI for Legal Teams · Contract & Litigation Skills · Lawyers' Roles in Product Development</p>
+                </div>
+            </div>
+
+            <div class="edu-item expandable" tabindex="0" onclick="this.classList.toggle('expanded')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('expanded')}">
+                <div class="edu-header">
+                    <div>
+                        <p class="edu-school">Berkeley Law</p>
+                        <p class="edu-detail">Commercial Contracts</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="coursework">
+                    <p>IP Clauses · AI & Commercial Contracts · Terms & Termination · Dispute Resolution · Remedies & Restrictive Covenants · Due Diligence</p>
+                </div>
+            </div>
+
+            <div class="edu-item expandable" tabindex="0" onclick="this.classList.toggle('expanded')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('expanded')}">
+                <div class="edu-header">
+                    <div>
+                        <p class="edu-school">Cornell University</p>
+                        <p class="edu-detail">Diversity & Inclusion</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="coursework">
+                    <p>Counteracting Unconscious Bias · Fostering Inclusive Climate · Community Engagement · Assessing Corporate Institutions</p>
+                </div>
+            </div>
+
+            <div class="edu-item expandable" tabindex="0" onclick="this.classList.toggle('expanded')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('expanded')}">
+                <div class="edu-header">
+                    <div>
+                        <p class="edu-school">Columbia Business School</p>
+                        <p class="edu-detail">Blockchain in Business</p>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </div>
+                <div class="coursework">
+                    <p>Distributed Consensus · Ethereum & Smart Contracts · Bitcoin & Transaction Fees · Blockchain Applications for Executives</p>
+                </div>
+            </div>
+
+            <div class="edu-item" style="margin-top: 32px;">
+                <p class="edu-name">Certifications</p>
+                <p class="edu-detail">CAMS · ACAMS Sanctions</p>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Why</p>
+            <div class="origin">
+                <p>
+                    My father taught me integrity. My mother taught me service. Schools grounded me in fundamentals, while also seeding the instinct to question. College too was an environment of fierce competitive plausibility, and law school ultimately revealed how stories shape outcomes, how power moves through systems, and the inextricability of well-being and infrastructure.
+                </p>
+                <p>
+                    It's been a lifelong dedication to deep understanding, or the attempt thereof, which has allowed me to see patterns across cultures, disciplines, and industries. What I keep coming back to are the building blocks: preserved reasoning, ecosystem balance, and strong communities of people.
+                </p>
+                <p>
+                    Each generation has their issue. Ours—non-ironically—is about our ability to maintain individual coherence under pressure, and for organizations to put prosperity in alignment with human values. These are the things we need to address, because without them we're simply not attuned for our greatest potential.
+                </p>
+                <p>
+                    I apply this thinking to my areas of exposure. Please feel free to connect.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Connect</p>
+            <div class="links">
+                <a href="/cdn-cgi/l/email-protection#7b1f1a15121e173b1f1a151f1417171855181416">Email</a>
+                <a href="https://www.linkedin.com/in/callowayesq/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7682344" target="_blank" rel="noopener noreferrer">SSRN</a>
+                <a href="https://x.com/callos_way" target="_blank" rel="noopener noreferrer">X</a>
+            </div>
+        </section>
+
+        <footer>
+            <p class="footer-text">© 2025 DANDO LLC</p>
+   
