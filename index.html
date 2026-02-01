@@ -70,7 +70,16 @@
 
         .identity.tribal {
             color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .lens {
+            font-family: 'Newsreader', Georgia, serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
             margin-bottom: 40px;
+            line-height: 1.7;
         }
 
         .bio {
@@ -145,11 +154,17 @@
             vertical-align: middle;
         }
 
-        /* Current roles - minimal */
+        /* Current roles - with descriptions */
         .roles {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 28px;
+        }
+
+        .role-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .role-line {
@@ -160,6 +175,21 @@
         .role-line strong {
             color: var(--text-primary);
             font-weight: 500;
+        }
+
+        .role-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .career-spans {
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         /* Education */
@@ -312,18 +342,29 @@
             <h1 class="name">Daniel D. Calloway III</h1>
             <p class="identity">AI Governance · Financial Services · Regulatory Strategy</p>
             <p class="identity tribal">Member, Narragansett Indian Tribe</p>
+            <p class="lens">I come from a tradition that measures decisions by their impact seven generations out. That's the lens I bring to emerging technology.</p>
             <p class="bio">
-                Fifteen years inside financial institutions, regulatory investigations, and high-stakes litigation. Columbia Business School. Published frameworks on legal AI and institutional governance. Author of books on what it takes for people and organizations to hold together under pressure. I study the systems that shape how we live—and what happens when they stop serving us.
+                Fifteen years inside financial institutions, regulatory investigations, and high-stakes litigation. Published frameworks on legal AI and institutional governance. Author of books on what it takes for people and organizations to hold together under pressure. I study the systems that shape how we live—and what happens when they stop serving us.
             </p>
         </header>
 
         <section>
             <p class="section-label">Current</p>
             <div class="roles">
-                <p class="role-line"><strong>Legal AI Expert</strong> · Enterprise program (confidential)</p>
-                <p class="role-line"><strong>Senior Counsel & Advisory Board</strong> · Axiom Law</p>
-                <p class="role-line"><strong>Founder</strong> · DANDO LLC — Lineage in service. Ideas made manifest.</p>
+                <div class="role-item">
+                    <p class="role-line"><strong>Legal AI Integration & Evaluation</strong> · Various clients</p>
+                    <p class="role-desc">Advising legal teams on AI tool selection, workflow design, and responsible adoption. Developing evaluation frameworks that measure not just accuracy but reasoning quality, ethical grounding, and decision integrity. Bridging the gap between what these tools can do and what lawyers actually need.</p>
+                </div>
+                <div class="role-item">
+                    <p class="role-line"><strong>Senior Counsel & Advisory Board</strong> · Axiom Law</p>
+                    <p class="role-desc">Embedded legal and compliance advisory for global financial institutions, alternative asset managers, and AI-native technology companies. Current engagement: KYC/AML program design and regulatory strategy for a global private equity firm.</p>
+                </div>
+                <div class="role-item">
+                    <p class="role-line"><strong>Founder</strong> · DANDO LLC</p>
+                    <p class="role-desc">Intellectual property development and advisory services. Building frameworks for institutional coherence, AI governance, and human decision-making under pressure.</p>
+                </div>
             </div>
+            <p class="career-spans">Career spans Capital One, Thomson Reuters, Binance, Boy Scouts of America bankruptcy, the $26B opioid MDL, DOJ support on Deepwater Horizon, private equity compliance, and crypto regulatory work. Seventy-plus engagements.</p>
         </section>
 
         <section>
@@ -475,26 +516,22 @@
                 <p class="edu-name">Certifications</p>
                 <p class="edu-detail">CAMS · ACAMS Sanctions</p>
             </div>
-
-            <div class="edu-item" style="margin-top: 28px;">
-                <p class="edu-detail" style="color: var(--text-secondary);">Career spans Capital One, Thomson Reuters, Binance during DOJ investigation, Boy Scouts of America bankruptcy, the $26B opioid MDL, DOJ support on Deepwater Horizon, private equity compliance, and crypto regulatory work. Seventy-plus engagements.</p>
-            </div>
         </section>
 
         <section>
             <p class="section-label">Why</p>
             <div class="origin">
                 <p>
-                    My father taught me integrity: do what's right even when no one is looking. Schools gave me tools, but I've always been an independent thinker—capable of giving the expected answer when required, more interested in understanding how we got where we are and whether what we've built is actually helping or hurting. There was always more to unpack than the curriculum allowed.
+                    My father taught me integrity. My mother taught me service. Schools grounded me in fundamentals, while also seeding the instinct to question. College too was an environment of fierce competitive plausibility, and law school ultimately revealed how stories shape outcomes, how power moves through systems, and the inextricability of well-being and infrastructure.
                 </p>
                 <p>
-                    Criminology showed me the range of human experience—not black and white morality, but shades of grey. Why people do what they do under pressure. Law school taught me how those dynamics get formalized into rules. Then I went inside: compliance at Capital One, regulatory work at a crypto exchange during a federal investigation, healthcare litigation, private equity. I wanted to see how the machinery actually runs.
+                    It's been a lifelong dedication to deep understanding, or the attempt thereof, which has allowed me to see patterns across cultures, disciplines, and industries. What I keep coming back to are the building blocks: preserved reasoning, ecosystem balance, and strong communities of people.
                 </p>
                 <p>
-                    The things people talk about most in private are the things I'm trying to address. Mental health, financial security, relationships that don't fall apart under stress, organizations that can explain their decisions and stand behind them. These aren't abstract problems to me.
+                    Each generation has their issue. Ours—non-ironically—is about our ability to maintain individual coherence under pressure, and for organizations to put prosperity in alignment with human values. These are the things we need to address, because without them we're not attuned for our greatest potential.
                 </p>
                 <p>
-                    I've always operated under a service-to-others model. That's who I am.
+                    I apply this thinking to my areas of exposure. Please feel free to connect.
                 </p>
             </div>
         </section>
@@ -502,7 +539,7 @@
         <section>
             <p class="section-label">Connect</p>
             <div class="links">
-                <a href="mailto:daniel@dandollc.com">Email</a>
+                <a href="/cdn-cgi/l/email-protection#7b1f1a15121e173b1f1a151f1417171855181416">Email</a>
                 <a href="https://www.linkedin.com/in/callowayesq/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7682344" target="_blank" rel="noopener noreferrer">SSRN</a>
                 <a href="https://x.com/callos_way" target="_blank" rel="noopener noreferrer">X</a>
@@ -511,7 +548,4 @@
 
         <footer>
             <p class="footer-text">© 2025 DANDO LLC</p>
-        </footer>
-    </div>
-</body>
-</html>
+   
