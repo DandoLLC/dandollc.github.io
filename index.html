@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel D. Calloway III</title>
+    <meta name="description" content="Daniel D. Calloway III: regulatory and technology attorney (DC, MD), CAMS, founder of DANDO LLC. AI governance advisory, research on legal AI and judgment, and books on coherence under pressure.">
+    <link rel="canonical" href="https://dandollc.github.io/">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Daniel D. Calloway III">
+    <meta property="og:description" content="AI governance, financial services regulation and consumer advocacy. Founder of DANDO LLC.">
+    <meta property="og:url" content="https://dandollc.github.io/">
+    <meta property="og:image" content="https://dandollc.github.io/dando-logo.png">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -20,7 +28,7 @@
             --bg-tertiary: #18181b;
             --text-primary: #fafafa;
             --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
+            --text-muted: #8f8f99;
             --accent: #d4a574;
             --border: #27272a;
         }
@@ -281,6 +289,35 @@
             }
         }
 
+        /* Advisory block and shared navigation (2026-10 preview) */
+        .topnav {
+            display: flex; flex-wrap: wrap; gap: 8px 22px; padding-top: 28px;
+            font-size: 0.8rem;
+        }
+        .topnav a { color: var(--text-secondary); text-decoration: none; padding: 6px 0; }
+        .topnav a:hover, .topnav a:focus-visible { color: var(--accent); }
+        a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+        .advisory-intro { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 28px; }
+        .offers { display: grid; gap: 18px; margin-bottom: 30px; }
+        .offer { padding: 18px 20px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 4px; }
+        .offer-name { font-family: 'Newsreader', Georgia, serif; font-size: 1.15rem; color: var(--text-primary); margin-bottom: 4px; }
+        .offer-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+        .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+        .btn {
+            display: inline-flex; align-items: center; min-height: 44px; padding: 10px 18px;
+            font-size: 0.85rem; text-decoration: none; border-radius: 3px; transition: all 0.2s;
+        }
+        .btn-primary { background: var(--accent); color: #0a0a0b; font-weight: 500; }
+        .btn-primary:hover { background: #e2b98d; }
+        .btn-ghost { border: 1px solid var(--border); color: var(--text-primary); }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+        .buy-links { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; }
+        .buy-links a { color: var(--text-secondary); }
+        .buy-links a:hover { color: var(--accent); }
+        .eco { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 18px; font-size: 0.85rem; }
+        .eco a { color: var(--text-secondary); text-decoration: none; }
+        .eco a:hover, .eco a[aria-current] { color: var(--accent); }
+
         /* Expandable coursework */
         .edu-item.expandable {
             cursor: pointer;
@@ -335,7 +372,13 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <nav class="topnav" aria-label="On this page">
+            <a href="#advisory">Advisory</a>
+            <a href="#research">Research</a>
+            <a href="#books">Books</a>
+            <a href="#connect">Connect</a>
+        </nav>
+        <header style="padding-top: 56px;">
             <div class="logo">
                 <img src="dando-logo.png" alt="DANDO" />
             </div>
@@ -348,6 +391,29 @@
             </p>
         </header>
 
+        <section id="advisory">
+            <p class="section-label">Advisory</p>
+            <p class="advisory-intro">Through DANDO LLC, I work with general counsel, compliance leaders and boards on adopting AI in regulated work without losing the judgment their clients and regulators rely on.</p>
+            <div class="offers">
+                <div class="offer">
+                    <p class="offer-name">Assessment</p>
+                    <p class="offer-desc">A one-time evaluation of your AI adoption posture, ending in a governance-ready report with prioritized recommendations.</p>
+                </div>
+                <div class="offer">
+                    <p class="offer-name">Advisory</p>
+                    <p class="offer-desc">Ongoing governance counsel during active adoption: decision architecture, oversight protocols and board briefings.</p>
+                </div>
+                <div class="offer">
+                    <p class="offer-name">Training</p>
+                    <p class="offer-desc">Workshops and sessions that help legal, compliance and risk teams evaluate AI output and keep their professional judgment.</p>
+                </div>
+            </div>
+            <div class="cta-row">
+                <a class="btn btn-primary" href="https://dandollc.github.io/dando/#services">See DANDO services</a>
+                <a class="btn btn-ghost" href="mailto:daniel@dandollc.com?subject=Advisory%20inquiry">Email about an engagement</a>
+            </div>
+        </section>
+
         <section>
             <p class="section-label">Current</p>
             <div class="roles">
@@ -357,7 +423,7 @@
                 </div>
                 <div class="role-item">
                     <p class="role-line"><strong>Senior Counsel & Advisory Board</strong> · Axiom Law</p>
-                    <p class="role-desc">Embedded legal and compliance advisory for global financial institutions, alternative asset managers, and AI-native technology companies. Current engagement: KYC/AML program design and regulatory strategy for a global private equity firm.</p>
+                    <p class="role-desc">Embedded legal and compliance advisory for global financial institutions, alternative asset managers, and AI-native technology companies.</p>
                 </div>
                 <div class="role-item">
                     <p class="role-line"><strong>Founder</strong> · DANDO LLC</p>
@@ -367,8 +433,14 @@
             <p class="career-spans">Career spans Capital One, Binance, Boy Scouts of America bankruptcy, the $26B opioid MDL, DOJ support on Deepwater Horizon, private equity compliance, and crypto regulatory work. Seventy-plus engagements.</p>
         </section>
 
-        <section>
+        <section id="research">
             <p class="section-label">Published Work</p>
+
+            <div class="work-item">
+                <h3 class="work-title"><a href="https://arxiv.org/abs/2608.20220" target="_blank" rel="noopener noreferrer">InsufficiencyBench: Evaluating LLM Legal Advice on Underspecified User Queries</a> <span class="tag">New</span></h3>
+                <p class="work-meta">arXiv · 2026 · with Samuel J. Vincent, Fangyi Yu, Andrew M. Bean and Nabeel Seedat · Best Paper Honorable Mention, ICML 2026 AI for Law Workshop</p>
+                <p class="work-desc">A benchmark for how language models answer legal questions that leave out facts the answer depends on, and whether they notice what is missing.</p>
+            </div>
 
             <div class="work-item">
                 <h3 class="work-title"><a href="https://papers.ssrn.com/abstract=6256058" target="_blank" rel="noopener noreferrer">The Hegemonic Function of AI</a> <span class="tag">New</span></h3>
@@ -384,7 +456,7 @@
 
             <div class="work-item">
                 <h3 class="work-title"><a href="https://papers.ssrn.com/abstract=5960914" target="_blank" rel="noopener noreferrer">Coherence Under Acceleration</a></h3>
-                <p class="work-meta">SSRN · 2025</p>
+                <p class="work-meta">SSRN · 2026</p>
                 <p class="work-desc">How speed degrades judgment. A framework for institutional governance when everything is moving faster than the people running it.</p>
             </div>
 
@@ -395,25 +467,27 @@
             </div>
 
             <div class="work-item">
-                <h3 class="work-title"><a href="https://papers.ssrn.com/abstract=6158707" target="_blank" rel="noopener noreferrer">The Hegemonic Function of Law in American Slavery</a> <span class="tag">New</span></h3>
-                <p class="work-meta">SSRN · 2026 · CALI Excellence Award · UConn Law</p>
+                <h3 class="work-title">The Hegemonic Function of Law in American Slavery</h3>
+                <p class="work-meta">UConn Law · CALI Excellence Award</p>
                 <p class="work-desc">How legal systems encode ideology into infrastructure—and how resistance emerges anyway. The question I started with, and haven't stopped asking.</p>
             </div>
         </section>
 
-        <section>
+        <section id="books">
             <p class="section-label">Books</p>
 
             <div class="work-item">
                 <h3 class="work-title"><a href="https://dandollc.github.io/callosway/" target="_blank" rel="noopener noreferrer">Callo's Way</a></h3>
                 <p class="work-meta">Book I of III</p>
                 <p class="work-desc">A framework for staying grounded under pressure. Nervous system regulation, attention discipline, and the practice of choosing deliberately.</p>
+                <p class="buy-links"><a href="https://a.co/d/0cH8SsNl" target="_blank" rel="noopener noreferrer">Amazon</a> · <a href="https://callosway.gumroad.com/l/uqqcu" target="_blank" rel="noopener noreferrer">Digital edition</a></p>
             </div>
 
             <div class="work-item">
-                <h3 class="work-title"><a href="https://callosway.gumroad.com/l/kkjjal" target="_blank" rel="noopener noreferrer">The Dependency Design</a> <span class="tag">New</span></h3>
-                <p class="work-meta">Book II of III · <a href="https://dandollc.github.io/thedependencydesign/" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: underline;">Companion Site</a></p>
+                <h3 class="work-title"><a href="https://dandollc.github.io/thedependencydesign/" target="_blank" rel="noopener noreferrer">The Dependency Design</a> <span class="tag">New</span></h3>
+                <p class="work-meta">Book II of III</p>
                 <p class="work-desc">How modern technology impacts human bonding circuitry. Dating apps, social platforms, algorithmic feeds, and more. A case for designed constraints and intentional repair.</p>
+                <p class="buy-links"><a href="https://callosway.gumroad.com/l/kkjjal" target="_blank" rel="noopener noreferrer">Book</a> · <a href="https://callosway.gumroad.com/l/ldypra" target="_blank" rel="noopener noreferrer">90-Day Guided Workbook</a></p>
             </div>
         </section>
 
@@ -561,10 +635,11 @@
             </div>
         </section>
 
-        <section>
+        <section id="connect">
             <p class="section-label">Connect</p>
             <div class="links">
-                <a href="/cdn-cgi/l/email-protection#7b1f1a15121e173b1f1a151f1417171855181416">Email</a>
+                <a href="mailto:daniel@dandollc.com">Email</a>
+                <a href="https://dandollc.github.io/dando/">DANDO LLC</a>
                 <a href="https://www.linkedin.com/in/callowayesq/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7682344" target="_blank" rel="noopener noreferrer">SSRN</a>
                 <a href="https://x.com/callos_way" target="_blank" rel="noopener noreferrer">X</a>
@@ -572,5 +647,23 @@
         </section>
 
         <footer>
+            <div class="eco" role="navigation" aria-label="Related sites">
+                <a href="https://dandollc.github.io/" aria-current="page">Daniel D. Calloway III</a>
+                <a href="https://dandollc.github.io/dando/">DANDO Advisory</a>
+                <a href="https://dandollc.github.io/callosway/">Callo&rsquo;s Way</a>
+                <a href="https://dandollc.github.io/thedependencydesign/">The Dependency Design</a>
+            </div>
             <p class="footer-text">© 2026 DANDO LLC</p>
-   
+        </footer>
+    </div>
+<script>
+    document.querySelectorAll('.edu-item.expandable').forEach(function (el) {
+        el.setAttribute('role', 'button');
+        el.setAttribute('aria-expanded', 'false');
+        var sync = function () { setTimeout(function () { el.setAttribute('aria-expanded', el.classList.contains('expanded')); }, 0); };
+        el.addEventListener('click', sync);
+        el.addEventListener('keydown', sync);
+    });
+</script>
+</body>
+</html>
