@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dandollc.github.io/sitemap.xml
