@@ -320,6 +320,8 @@ main section, main [id] { scroll-margin-top: 84px; }
 }
 
 /* ---------- Ledger (research + books) ---------- */
+.entry .book-thumb { float: left; width: 76px; height: auto; margin: 0.35rem 1.4rem 0.6rem 0; border-radius: 2px; box-shadow: 0 8px 20px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08); }
+.entry:has(.book-thumb)::after { content: ""; display: block; clear: both; }
 .ledger > li { padding: 1.75rem 0; border-top: 1px solid var(--line); }
 .ledger > li:first-child { border-top: 0; padding-top: 0; }
 .cite {
@@ -651,6 +653,7 @@ sup.tm { font-size: 0.5em; font-style: normal; font-weight: 400; letter-spacing:
           <li>
             <p class="cite"><span>Book I of III</span></p>
             <div class="entry">
+              <img class="book-thumb" src="callos-way-cover.jpg" width="600" height="900" alt="Cover of Callo&rsquo;s Way">
               <h3 class="entry-title"><a href="https://dandollc.github.io/callosway/">Callo's Way<sup class="tm">&trade;</sup></a></h3>
               <p class="entry-desc">A book about staying grounded under pressure. It shows how to steady your nervous system and train your attention so you can choose deliberately.</p>
               <div class="buy" aria-label="Get Callo's Way" role="group">
@@ -663,6 +666,7 @@ sup.tm { font-size: 0.5em; font-style: normal; font-weight: 400; letter-spacing:
           <li>
             <p class="cite"><span>Book</span><span>with a 90-Day Guided Workbook</span><span class="new">New</span></p>
             <div class="entry">
+              <img class="book-thumb" src="dependency-design-cover.jpg" width="600" height="900" alt="Cover of The Dependency Design">
               <h3 class="entry-title"><a href="https://dandollc.github.io/thedependencydesign/">The Dependency Design<sup class="tm">&trade;</sup></a></h3>
               <p class="entry-desc">How dating apps, social platforms, algorithmic feeds and AI companions act on the human bonding system, and how chosen limits and deliberate repair can help people reconnect.</p>
               <div class="buy" aria-label="Get The Dependency Design" role="group">
