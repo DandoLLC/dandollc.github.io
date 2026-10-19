@@ -450,6 +450,10 @@ main section, main [id] { scroll-margin-top: 84px; }
   font-size: 0.8125rem; color: var(--eco-silver-dim);
 }
 .eco-footnote { margin-top: 0.6rem; max-width: 46rem; font-size: 0.72rem; line-height: 1.55; color: var(--eco-silver-dim); opacity: 0.85; }
+sup.tm { font-size: 0.5em; font-style: normal; font-weight: 400; letter-spacing: 0; vertical-align: super; line-height: 0; margin-left: 0.06em; }
+.hero-mark-wrap { display: inline-block; position: relative; }
+.hero-mark-wrap .hero-mark { display: block; }
+.hero-mark-wrap .tm-mark { position: absolute; top: 0; right: -0.4rem; font-size: 0.7rem; color: var(--eco-silver-dim); }
 .fn-ref { color: inherit; text-decoration: none; font-size: 0.75em; vertical-align: super; line-height: 0; margin-left: 0.05em; }
 .fn-ref:hover { color: var(--accent-bright); }
 @media (max-width: 420px) { .contact-list a { grid-template-columns: 5.5rem minmax(0, 1fr); } }
@@ -510,7 +514,7 @@ main section, main [id] { scroll-margin-top: 84px; }
     <section class="hero" aria-labelledby="name">
       <div class="hero-grid">
         <div class="hero-id">
-          <img class="hero-mark" src="dando-mark-flare.png" width="249" height="192" alt="DANDO mark">
+          <span class="hero-mark-wrap"><img class="hero-mark" src="dando-mark-flare.png" width="249" height="192" alt="DANDO mark"><sup class="tm tm-mark" aria-label="trademark">&trade;</sup></span>
           <h1 id="name">Daniel D. Calloway III</h1>
           <p class="identity">AI Governance · Financial Services · Regulatory Strategy · Consumer Advocacy</p>
           <p class="tribal">Member, Narragansett Indian Tribe</p>
@@ -647,7 +651,7 @@ main section, main [id] { scroll-margin-top: 84px; }
           <li>
             <p class="cite"><span>Book I of III</span></p>
             <div class="entry">
-              <h3 class="entry-title"><a href="https://dandollc.github.io/callosway/">Callo's Way</a></h3>
+              <h3 class="entry-title"><a href="https://dandollc.github.io/callosway/">Callo's Way<sup class="tm">&trade;</sup></a></h3>
               <p class="entry-desc">A book about staying grounded under pressure. It shows how to steady your nervous system and train your attention so you can choose deliberately.</p>
               <div class="buy" aria-label="Get Callo's Way" role="group">
                 <a href="https://www.amazon.com/dp/B0FJQRRY2C" target="_blank" rel="noopener noreferrer">Print</a>
@@ -659,7 +663,7 @@ main section, main [id] { scroll-margin-top: 84px; }
           <li>
             <p class="cite"><span>Book</span><span>with a 90-Day Guided Workbook</span><span class="new">New</span></p>
             <div class="entry">
-              <h3 class="entry-title"><a href="https://dandollc.github.io/thedependencydesign/">The Dependency Design</a></h3>
+              <h3 class="entry-title"><a href="https://dandollc.github.io/thedependencydesign/">The Dependency Design<sup class="tm">&trade;</sup></a></h3>
               <p class="entry-desc">How dating apps, social platforms, algorithmic feeds and AI companions act on the human bonding system, and how chosen limits and deliberate repair can help people reconnect.</p>
               <div class="buy" aria-label="Get The Dependency Design" role="group">
                 <a href="https://callosway.gumroad.com/l/kkjjal" target="_blank" rel="noopener noreferrer">Book</a>
@@ -864,6 +868,7 @@ main section, main [id] { scroll-margin-top: 84px; }
       </div>
     </div>
     <p class="eco-footer-bottom">© 2026 DANDO LLC</p>
+    <p class="eco-footnote">The D mark, Callo&rsquo;s Way and The Dependency Design are trademarks of DANDO, LLC.</p>
     <p class="eco-footnote" id="fn-services">*DANDO LLC is a consulting and research company and does not provide legal services. I am licensed to practice law in the District of Columbia and Maryland only.</p>
   </div>
 </footer>
